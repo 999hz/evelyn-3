@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz 14 de Febrero</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8d7da;
+            color: #721c24;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh; /* Altura completa de la ventana */
+            overflow: hidden; /* Evita el desplazamiento */
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .heart {
+            font-size: 20rem; /* Tamaño del corazón */
+            color: red;
+            cursor: pointer;
+            transition: transform 0.2s;
+            position: absolute; /* Posicionamiento absoluto */
+            top: 50%; /* Centrar verticalmente */
+            left: 50%; /* Centrar horizontalmente */
+            transform: translate(-50%, -50%); /* Ajustar el centro */
+        }
+        .heart:hover {
+            transform: scale(1.1) translate(-50%, -50%); /* Efecto de hover */
+        }
+        .hidden-message {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.5rem;
+            color: #155724;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="heartContainer">
+        <div class="heart" id="heart">❤️</div>
+    </div>
+
+    <div id="messageContainer" style="display: none;">
+        <h1>¡Feliz 14 de Febrero, mi amor!</h1>
+        <p>Hoy celebro el amor que siento por ti.</p>
+        <button id="showMessage" class="btn btn-danger">Descubre cuánto te amo</button>
+        <p id="hiddenMessage" class="hidden-message">Te amo más de lo que las palabras pueden expresar. Eres mi todo.</p>
+        <button id="loveSongButton" class="btn btn-info" style="margin-top: 20px;">No encontré canciones de amor, pero sí esto</button>
+    </div>
+
+    <script>
+        document.getElementById("heart").onclick = function() {
+            document.getElementById("heartContainer").style.display = "none"; // Oculta el corazón
+            document.getElementById("messageContainer").style.display = "block"; // Muestra el mensaje
+        };
+
+        document.getElementById("showMessage").onclick = function() {
+            document.getElementById("hiddenMessage").style.display = "block";
+            this.style.display = "none"; // Oculta el botón después de hacer clic
+        };
+
+        document.getElementById("loveSongButton").onclick = function() {
+            window.location.href = "https://www.youtube.com/watch?v=XASR_InEuEQ"; // Redirige al enlace de YouTube
+        };
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
